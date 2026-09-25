@@ -1,0 +1,31 @@
+@startuml
+
+start
+
+:Open Recommendation;
+
+:Read User Preferences;
+
+:Read Purchase History;
+
+:Search Matching Concert;
+
+if (Concert Found?) then (Yes)
+
+:Build Recommendation Prompt;
+
+:Send to AI;
+
+:Receive Recommendation;
+
+:Display Recommendation;
+
+else (No)
+
+:Display "No Recommendation";
+
+endif
+
+stop
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+
+actor Customer
+
+participant "Frontend" as FE
+participant "Backend API" as API
+database Database
+participant "Payment Gateway" as PG
+participant "QR Generator" as QR
+
+Customer -> FE : Login
+FE -> API : Authenticate
+API -> Database : Validate User
+Database --> API : Success
+API --> FE : Login Success
+
+Customer -> FE : Browse Event
+FE -> API : Request Event
+API -> Database : Get Event
+Database --> API
+API --> FE
+
+Customer -> FE : Checkout
+
+FE -> API : Create Order
+
+API -> Database : Save Order
+
+Database --> API
+
+API -> PG : Create Transaction Request
+
+PG --> API : Payment Token / URL
+
+API --> FE : Return Payment URL / Token
+
+Customer -> PG : Perform Payment
+
+== Asynchronous Process ==
+
+PG -> API : Webhook Notification (Payment Success)
+
+API -> Database : Update Order Status
+
+API -> QR : Generate QR
+
+QR --> API : QR Image
+
+API -> Database : Save Ticket
+
+API --> PG : Webhook Response 200 OK
+
+== Synchronous Process (Polling / Realtime) ==
+
+FE -> API : Check Payment Status
+
+API --> FE : Status Success & E-Ticket Data
+
+FE --> Customer : Show E-Ticket
+
+@enduml

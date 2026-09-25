@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KetTiket - Editorial Soft Minimalist UI Concept</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --canvas: #FAF8F5;
+      --surface: #FFFFFF;
+      --surface-subtle: #F2EFE9;
+      --ink: #1C1917;
+      --ink-muted: #78716C;
+      --border: #E7E5E4;
+      --accent: #E11D48; /* Soft Crimson */
+      --accent-soft: #FFF1F2;
+      --terracotta: #C2410C;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--canvas);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-custom {
+      font-family: 'Instrument Serif', serif;
+    }
+    .card-soft {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 10px 20px -5px rgba(28, 25, 23, 0.03);
+    }
+    .card-hover {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      border-color: #D6D3D1;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 30px -10px rgba(28, 25, 23, 0.05);
+    }
+    /* Custom subtle line dividers */
+    .hairline-b {
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-20">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-stone-900 text-stone-200 text-xs py-2 px-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center font-medium">
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+        <span>KetTiket Curator Series — Tiket Konser & Seni Pertunjukan Terpilih</span>
+      </span>
+      <div class="hidden sm:flex items-center gap-6 text-stone-400">
+        <span>Bantuan Pembelian</span>
+        <span>Lacak Tiket</span>
+        <span class="text-stone-200">ID / IDR</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+
+    <!-- Header / Editorial Navbar -->
+    <header class="hairline-b pb-6 mb-10 flex items-end justify-between sticky top-8 z-50 bg-canvas/95 backdrop-blur-md py-4 px-6 rounded-2xl border border-border/50 shadow-sm">
+      <div>
+        <a href="#" class="font-serif-custom text-4xl sm:text-5xl italic tracking-tight text-stone-900 block font-normal">KetTiket.</a>
+        <span class="text-xs text-stone-500 font-medium tracking-widest uppercase block mt-1">Editorial Concert & Culture Ticketing</span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-stone-600">
+        <a href="#" class="text-stone-900 hairline-b border-stone-900 pb-0.5 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-terracotta after:transition-all after:duration-300 hover:after:w-full">Eksplorasi</a>
+        <a href="#" class="hover:text-stone-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-terracotta after:transition-all after:duration-300 hover:after:w-full">Jadwal War</a>
+        <a href="#" class="hover:text-stone-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-terracotta after:transition-all after:duration-300 hover:after:w-full">Venues</a>
+        <a href="#" class="hover:text-stone-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-terracotta after:transition-all after:duration-300 hover:after:w-full">E-Ticket Saya</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button class="px-4 py-2 rounded-full border border-stone-300 bg-white text-xs font-medium text-stone-800 hover:bg-stone-50 transition-all duration-200 shadow-xs hover:shadow-sm">Masuk Akun</button>
+      </div>
+    </header>
+
+    <!-- Editorial Hero / Magazine Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
+
+            <!-- Main Featured Concert -->
+            <div class="lg:col-span-8 card-soft rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden bg-white">
+              <div class="flex justify-between items-start mb-6">
+                <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-medium tracking-widest uppercase">
+                  Sorotan Bulan Ini
+                </span>
+                <span class="text-xs text-stone-400 font-mono">18.11.2026 — GBK STADIUM</span>
+              </div>
+
+              <!-- Soft Gradient Nav Container (for sticky/visible header) -->
+              <div class="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-white/80 via-white/50 to-transparent backdrop-blur-sm z-10 border-b border-stone-200/50 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+                <div class="flex justify-between items-center max-w-6xl mx-auto">
+                  <div class="font-serif-custom text-xl italic text-stone-900">KetTiket.</div>
+                  <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-stone-600">
+                    <a href="#" class="text-stone-900 border-b-2 border-stone-900 pb-1">Eksplorasi</a>
+                    <a href="#" class="hover:text-stone-900 transition-colors">Jadwal War</a>
+                    <a href="#" class="hover:text-stone-900 transition-colors">Venues</a>
+                    <a href="#" class="hover:text-stone-900 transition-colors">E-Ticket Saya</a>
+                  </nav>
+                  <button class="px-4 py-2 rounded-full border border-stone-300 bg-white text-xs font-medium text-stone-800 hover:bg-stone-50 transition-colors shadow-sm">
+                    Masuk Akun
+                  </button>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center my-4 mt-20">
+                <div class="order-2 md:order-1">
+                  <span class="text-xs font-semibold text-rose-600 uppercase tracking-widest block mb-1">World Tour 2026</span>
+                  <h1 class="font-serif-custom text-3xl sm:text-4xl text-stone-900 leading-tight mb-3">
+                    Coldplay: Music of the Spheres
+                  </h1>
+                  <p class="text-xs text-stone-600 leading-relaxed mb-6">
+                    Pengalaman konser stadium dengan tata lampu ramah lingkungan dan aransemen musik visual terbaik tahun ini.
+                  </p>
+
+                  <div class="space-y-3 pt-2 hairline-b border-stone-200">
+                    <div class="flex justify-between text-xs">
+                      <span class="text-stone-500">Buka Penjualan:</span>
+                      <span class="font-semibold text-stone-900">Hari ini, 14:00 WIB</span>
+                    </div>
+                    <div class="flex justify-between text-xs">
+                      <span class="text-stone-500">Mulai Dari:</span>
+                      <span class="font-semibold text-stone-900">Rp 1.250.000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="order-1 md:order-2 h-64 rounded-2xl overflow-hidden bg-stone-100">
+                  <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover filter brightness-95">
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-stone-100 mt-8">
+                <div class="flex items-center gap-2 text-xs text-stone-500">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                  <span>Jaminan Tiket Resmi & Sistem Antrean Adil</span>
+                </div>
+                <button class="w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 text-white text-xs font-medium hover:bg-stone-800 transition-colors shadow-md">
+                  Pesan Tiket & Pilih Kursi
+                </button>
+              </div>
+            </div>
+            <span class="text-xs font-semibold text-rose-600 uppercase tracking-widest block mb-1">World Tour 2026</span>
+            <h1 class="font-serif-custom text-3xl sm:text-4xl text-stone-900 leading-tight mb-3">
+              Coldplay: Music of the Spheres
+            </h1>
+            <p class="text-xs text-stone-600 leading-relaxed mb-6">
+              Pengalaman konser stadium dengan tata lampu ramah lingkungan dan aransemen musik visual terbaik tahun ini.
+            </p>
+
+            <div class="space-y-3 pt-2 hairline-b border-stone-200">
+              <div class="flex justify-between text-xs">
+                <span class="text-stone-500">Buka Penjualan:</span>
+                <span class="font-semibold text-stone-900">Hari ini, 14:00 WIB</span>
+              </div>
+              <div class="flex justify-between text-xs">
+                <span class="text-stone-500">Mulai Dari:</span>
+                <span class="font-semibold text-stone-900">Rp 1.250.000</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2 h-64 rounded-2xl overflow-hidden bg-stone-100">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover filter brightness-95">
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-stone-100">
+          <div class="flex items-center gap-2 text-xs text-stone-500">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            <span>Jaminan Tiket Resmi & Sistem Antrean Adil</span>
+          </div>
+          <button class="w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 text-white text-xs font-medium hover:bg-stone-800 transition-colors shadow-md">
+            Pesan Tiket & Pilih Kursi
+          </button>
+        </div>
+      </div>
+
+      <!-- Side Editorial Curator Box -->
+      <div class="lg:col-span-4 bg-stone-100 rounded-3xl p-6 border border-stone-200 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 hairline-b border-stone-300 mb-4">
+            <span class="font-serif-custom text-xl italic text-stone-900">Catatan Kurator</span>
+            <i data-lucide="bookmark" class="w-4 h-4 text-stone-500"></i>
+          </div>
+          <p class="text-xs text-stone-600 leading-relaxed mb-4">
+            "KetTiket dirancang untuk menghormati pengalaman penikmat musik. Tanpa warna menyilaukan, tanpa iklan mengganggu — hanya fokus pada kemudahan memilih tempat duduk dan keamanan transaksi."
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-stone-200/80">
+          <div class="text-[11px] font-semibold text-stone-400 uppercase tracking-wider mb-2">Jadwal War Tiket Terdekat</div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <div>
+                <div class="font-medium text-stone-900">IU 'HEREH' World Tour</div>
+                <div class="text-[10px] text-stone-500">ICE BSD — 24 Ags 2026</div>
+              </div>
+              <span class="px-2 py-1 rounded bg-rose-50 text-rose-700 text-[10px] font-semibold">14:00 WIB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 1: Clean Ticket Category & Seat Selector -->
+    <section class="mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-4 hairline-b">
+        <div>
+          <span class="text-xs font-semibold text-rose-600 uppercase tracking-widest block mb-1">Tahap 02 / Pemilihan</span>
+          <h2 class="font-serif-custom text-3xl text-stone-900">Kategori Tiket & Tata Letak Kursi</h2>
+        </div>
+        <p class="text-xs text-stone-500 max-w-md">
+          Pilih kategori yang Anda inginkan. Nomor kursi akan dialokasikan secara transparan dengan penahan waktu 10 menit.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Category Card 1 -->
+        <div class="card-soft rounded-2xl p-6 card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-800 text-[11px] font-semibold">
+                VIP Floor
+              </span>
+              <span class="text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">Sisa 3 Kursi</span>
+            </div>
+            <h3 class="font-medium text-lg text-stone-900 mb-1">VIP Area Utama</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Termasuk akses Soundcheck, Jalur Khusus Fast-Track, dan Lanyard Eksklusif.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-stone-400 block uppercase">Harga per tiket</span>
+              <span class="font-semibold text-stone-900 text-base">Rp 3.800.000</span>
+            </div>
+            <button class="px-4 py-2 rounded-xl bg-stone-900 text-white text-xs font-medium hover:bg-stone-800 transition-colors">
+              Pilih Kursi
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Card 2 -->
+        <div class="card-soft rounded-2xl p-6 card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-800 text-[11px] font-semibold">
+                CAT 1A
+              </span>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Tersedia</span>
+            </div>
+            <h3 class="font-medium text-lg text-stone-900 mb-1">Tribun Tengah</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Duduk nyaman dengan pemandangan panggung yang simetris dan jelas.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-stone-400 block uppercase">Harga per tiket</span>
+              <span class="font-semibold text-stone-900 text-base">Rp 2.500.000</span>
+            </div>
+            <button class="px-4 py-2 rounded-xl border border-stone-300 text-stone-800 text-xs font-medium hover:bg-stone-50 transition-colors">
+              Pilih Kursi
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Card 3 (Sold Out) -->
+        <div class="card-soft rounded-2xl p-6 bg-stone-50/60 opacity-70 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-stone-200 text-stone-600 text-[11px] font-semibold">
+                CAT 2
+              </span>
+              <span class="text-xs font-semibold text-stone-500 bg-stone-200 px-2 py-0.5 rounded-full">Habis</span>
+            </div>
+            <h3 class="font-medium text-lg text-stone-700 mb-1">Festival Standing</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Area berdiri festival dekat panggung samping.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-stone-400 block uppercase">Harga per tiket</span>
+              <span class="font-semibold text-stone-600 text-base">Rp 1.500.000</span>
+            </div>
+            <button class="px-4 py-2 rounded-xl bg-stone-200 text-stone-500 text-xs font-medium cursor-not-allowed" disabled>
+              Terjual Habis
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Soft Minimalist E-Ticket Concept -->
+    <section class="mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-4 hairline-b">
+        <div>
+          <span class="text-xs font-semibold text-rose-600 uppercase tracking-widest block mb-1">Tahap 03 / E-Ticket Pass</span>
+          <h2 class="font-serif-custom text-3xl text-stone-900">Tiket Digital Bersih & Elegan</h2>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto card-soft rounded-3xl p-8 bg-white relative overflow-hidden border border-stone-200">
+        <div class="flex justify-between items-center pb-6 hairline-b">
+          <div>
+            <span class="font-serif-custom text-2xl text-stone-900 block">KetTiket Admission</span>
+            <span class="text-[10px] text-stone-400 tracking-wider uppercase">Konfirmasi Pembelian Resmi</span>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200">
+            Terverifikasi
+          </span>
+        </div>
+
+        <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          <div class="md:col-span-2 space-y-4">
+            <div>
+              <span class="text-[10px] font-semibold text-stone-400 uppercase tracking-wider">Konser</span>
+              <h3 class="text-xl font-semibold text-stone-900">Coldplay: Music of the Spheres</h3>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 text-xs pt-2">
+              <div>
+                <span class="text-stone-400 block text-[10px]">WAKTU & TANGGAL</span>
+                <span class="font-medium text-stone-800">18 Nov 2026, 19:00 WIB</span>
+              </div>
+              <div>
+                <span class="text-stone-400 block text-[10px]">LOKASI VENUE</span>
+                <span class="font-medium text-stone-800">GBK Stadium, Jakarta</span>
+              </div>
+              <div>
+                <span class="text-stone-400 block text-[10px]">KATEGORI & KURSI</span>
+                <span class="font-semibold text-rose-600">VIP Floor — Baris A / No. 05</span>
+              </div>
+              <div>
+                <span class="text-stone-400 block text-[10px]">NAMA PEMEGANG</span>
+                <span class="font-medium text-stone-800">Budi Santoso</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- QR Box Minimalist -->
+          <div class="bg-stone-50 rounded-2xl p-4 text-center border border-stone-200 flex flex-col items-center justify-center">
+            <div class="w-28 h-28 bg-white p-2 rounded-xl border border-stone-200 shadow-sm mb-2 flex items-center justify-center">
+              <i data-lucide="qr-code" class="w-24 h-24 text-stone-800"></i>
+            </div>
+            <span class="text-[10px] font-mono text-stone-500">TKT-88912-VIP</span>
+            <span class="text-[9px] text-stone-400 mt-1">Scan di Gate Masuk</span>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-stone-100 flex justify-between items-center text-xs text-stone-500">
+          <span>Simpan ke Apple Wallet / Google Wallet</span>
+          <button class="text-stone-900 font-semibold underline underline-offset-4 hover:text-rose-600 transition-colors">
+            Cetak PDF Tiket
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Minimalist -->
+    <footer class="pt-8 hairline-b border-stone-200 text-xs text-stone-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="font-serif-custom text-lg text-stone-900 block">KetTiket.</span>
+        <span>Mewujudkan pengalaman berburu tiket yang tenang, transparan, dan berkelas.</span>
+      </div>
+      <div>
+        <span>© 2026 KetTiket Inc. All rights reserved.</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

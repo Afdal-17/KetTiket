@@ -1,0 +1,31 @@
+@startuml
+
+actor Staff
+
+participant Scanner
+
+participant API
+
+database Database
+
+Staff -> Scanner : Scan QR
+
+Scanner -> API : Send QR Code
+
+API -> Database : Find Ticket
+
+Database --> API
+
+alt Ticket Valid
+
+API -> Database : Update Check-in
+
+API --> Scanner : Access Granted
+
+else Invalid
+
+API --> Scanner : Access Denied
+
+end
+
+@enduml

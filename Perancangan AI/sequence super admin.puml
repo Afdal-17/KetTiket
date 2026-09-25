@@ -1,0 +1,50 @@
+@startuml
+title Sequence Diagram - Super Admin AI Analysis
+
+actor "Super Admin" as Admin
+
+participant "Admin Dashboard" as Web
+participant "Laravel API" as API
+participant "AI Service" as AI
+database "MySQL" as DB
+participant "OpenAI / Gemini" as LLM
+
+Admin -> Web : Open AI Assistant
+
+Admin -> Web : Request Platform Analysis
+
+Web -> API : POST /api/admin/ai/analyze
+
+API -> API : Validate Authentication
+
+API -> API : Check Super Admin Permission
+
+API -> DB : Get Platform Data
+
+DB --> API : Platform Data
+
+API -> DB : Get Organizer Data
+
+DB --> API : Organizer Data
+
+API -> DB : Get Event Data
+
+DB --> API : Event Data
+
+API -> DB : Get Ticket & Order Data
+
+DB --> API : Transaction Data
+
+API -> AI : Send Analysis Context
+
+AI -> LLM : Generate Platform Analysis
+
+LLM --> AI : AI Insight
+
+AI --> API : Analysis Result
+
+API --> Web : Return AI Analysis
+
+Web --> Admin : Display Platform Insight
+
+@enduml

@@ -1,0 +1,83 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+actor Customer
+actor Organizer
+actor "Super Admin" as Admin
+actor "Payment Gateway" as PG
+actor "Barcode Scanner" as Scanner
+
+rectangle "SaaS Concert Ticketing Platform" {
+
+package "Customer"{
+
+usecase "Register" as UC1
+usecase "Login" as UC2
+usecase "Browse Concert" as UC3
+usecase "Search Concert" as UC4
+usecase "View Detail Concert" as UC5
+usecase "Choose Seat" as UC6
+usecase "Checkout Ticket" as UC7
+usecase "Payment" as UC8
+usecase "View E-Ticket" as UC9
+usecase "Download Ticket" as UC10
+usecase "Receive Notification" as UC11
+usecase "Cancel / Refund Ticket" as UC22
+
+}
+
+package "Organizer"{
+
+usecase "Manage Event" as UC12
+usecase "Manage Ticket" as UC13
+usecase "Manage Seat Map" as UC14
+usecase "View Sales Report" as UC15
+usecase "Scan Ticket" as UC16
+
+}
+
+package "Super Admin"{
+
+usecase "Manage Organizer" as UC17
+usecase "Verify Organizer" as UC18
+usecase "Manage User" as UC19
+usecase "View Dashboard" as UC20
+usecase "Manage Payment Gateway" as UC21
+usecase "Manage Venue" as UC23
+
+}
+
+}
+
+Customer --> UC1
+Customer --> UC2
+Customer --> UC3
+Customer --> UC4
+Customer --> UC5
+Customer --> UC6
+Customer --> UC7
+Customer --> UC8
+Customer --> UC9
+Customer --> UC10
+Customer --> UC11
+Customer --> UC22
+
+Organizer --> UC12
+Organizer --> UC13
+Organizer --> UC14
+Organizer --> UC15
+Organizer --> UC16
+
+Admin --> UC17
+Admin --> UC18
+Admin --> UC19
+Admin --> UC20
+Admin --> UC21
+Admin --> UC23
+
+UC8 --> PG
+UC16 --> Scanner
+
+@enduml

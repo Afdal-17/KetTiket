@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+actor Customer
+actor Organizer
+actor "Super Admin" as Admin
+
+rectangle "AI Assistant & Intelligence Module" {
+
+    package "Customer AI" {
+        usecase "Chat with AI" as C1
+        usecase "Get Concert Recommendation" as C2
+        usecase "Ask Concert Information" as C3
+        usecase "Ask Event FAQ" as C4
+        usecase "View Chat History" as C5
+    }
+
+    package "Organizer AI" {
+        usecase "Generate Event Description" as O1
+        usecase "Analyze Event Sales" as O2
+        usecase "Analyze Customer Trends" as O3
+        usecase "Get Ticket Recommendation" as O4
+        usecase "Generate Event Report" as O5
+    }
+
+    package "Super Admin AI" {
+        usecase "Analyze Platform Performance" as A1
+        usecase "Generate Platform Report" as A2
+        usecase "Monitor Event Trends" as A3
+        usecase "Analyze Organizer Performance" as A4
+        usecase "Detect Suspicious Activity" as A5
+    }
+}
+
+Customer --> C1
+Customer --> C2
+Customer --> C3
+Customer --> C4
+Customer --> C5
+
+Organizer --> O1
+Organizer --> O2
+Organizer --> O3
+Organizer --> O4
+Organizer --> O5
+
+Admin --> A1
+Admin --> A2
+Admin --> A3
+Admin --> A4
+Admin --> A5
+
+@enduml

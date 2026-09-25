@@ -1,0 +1,37 @@
+@startuml
+
+start
+
+:Open Scanner;
+
+:Scan QR Code;
+
+:Send Ticket Code to Server;
+
+if (Ticket Exists?) then (Yes)
+
+if (Already Used?) then (Yes)
+
+:Reject Entry;
+
+stop
+
+else (No)
+
+:Update Check-in;
+
+:Allow Entry;
+
+stop
+
+endif
+
+else (No)
+
+:Invalid Ticket;
+
+stop
+
+endif
+
+@enduml

@@ -1,0 +1,51 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing & Cache
+/.phpunit.cache
+/.phpunit.result.cache
+
+# Production builds
+/public/build
+/public/hot
+/public/storage
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Composer & PHP
+/vendor/
+/Backend/konser-tiket/vendor/
+/Backend/konser-tiket/node_modules/
+/Backend/konser-tiket/public/storage
+/Backend/konser-tiket/storage/*.key
+/Backend/konser-tiket/storage/pail
+/Backend/konser-tiket/.env
+/Backend/konser-tiket/.env.*
+!/Backend/konser-tiket/.env.example
+.phpactor.json
+Homestead.json
+Homestead.yaml
+/auth.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+/.vscode
+/.idea
+/.fleet
+/.nova
+/.zed
+.hermes/

@@ -1,0 +1,50 @@
+@startuml
+title Sequence Diagram - Organizer AI Analysis
+
+actor Organizer
+
+participant "Web Dashboard" as Web
+participant "Laravel API" as API
+participant "AI Service" as AI
+database "MySQL" as DB
+participant "OpenAI / Gemini" as LLM
+
+Organizer -> Web : Open AI Assistant
+
+Organizer -> Web : Request Event Analysis
+
+Web -> API : POST /api/organizer/ai/analyze
+
+API -> API : Validate Authentication
+
+API -> API : Check Organizer Permission
+
+API -> DB : Verify Event Ownership
+
+DB --> API : Ownership Valid
+
+API -> DB : Get Event Data
+
+DB --> API : Event Data
+
+API -> DB : Get Ticket Data
+
+DB --> API : Ticket Data
+
+API -> DB : Get Order & Payment Data
+
+DB --> API : Transaction Data
+
+API -> AI : Send Analysis Context
+
+AI -> LLM : Generate Analysis
+
+LLM --> AI : AI Insight
+
+AI --> API : Analysis Result
+
+API --> Web : Return AI Analysis
+
+Web --> Organizer : Display Insight
+
+@enduml

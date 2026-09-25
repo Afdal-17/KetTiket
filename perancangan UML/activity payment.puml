@@ -1,0 +1,47 @@
+@startuml
+
+start
+
+:Register/Login;
+
+:Browse Concert;
+
+:Choose Concert;
+
+:View Detail;
+
+:Choose Ticket;
+
+:Choose Seat;
+
+:Checkout;
+
+:Select Payment Method;
+
+:Send Payment;
+
+if (Payment Success?) then (Yes)
+
+:Generate QR Code;
+
+:Generate Barcode;
+
+:Create E-Ticket;
+
+:Store Ticket;
+
+:Show Ticket;
+
+else (No)
+
+:Payment Failed;
+
+stop
+
+endif
+
+:Receive Notification;
+
+stop
+
+@enduml

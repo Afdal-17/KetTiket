@@ -1,0 +1,25 @@
+@startuml
+
+start
+
+:Open AI Assistant;
+
+:Type Question;
+
+:Send Question to Backend;
+
+:Search Relevant Data;
+
+:Build AI Prompt;
+
+:Send Prompt to AI API;
+
+:Receive AI Response;
+
+:Save Chat History;
+
+:Display Answer;
+
+stop
+
+@enduml

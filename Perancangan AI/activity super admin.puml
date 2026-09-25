@@ -1,0 +1,66 @@
+@startuml
+title Activity Diagram - Super Admin AI Analysis
+
+start
+
+:Super Admin membuka AI Assistant;
+
+:Memilih jenis analisis;
+
+if (Jenis analisis?) then (Platform)
+
+    :Request Platform Analysis;
+
+    :Mengambil data Organizer;
+
+    :Mengambil data Event;
+
+    :Mengambil data Ticket;
+
+    :Mengambil data Order;
+
+    :Mengambil data Payment;
+
+elseif (Event Trend)
+
+    :Request Event Trend Analysis;
+
+    :Mengambil data Event;
+
+    :Mengambil data Ticket;
+
+    :Mengambil data Order;
+
+elseif (Organizer Performance)
+
+    :Request Organizer Performance;
+
+    :Mengambil data Organizer;
+
+    :Mengambil data Event;
+
+    :Mengambil data Sales;
+
+else (Monitoring)
+
+    :Request Platform Monitoring;
+
+    :Mengambil Activity Log;
+
+    :Mengambil Transaction Log;
+
+endif
+
+:Data dikirim ke AI Service;
+
+:AI menganalisis data;
+
+:AI menghasilkan insight;
+
+:Laravel menerima hasil AI;
+
+:Menampilkan hasil kepada Super Admin;
+
+stop
+
+@enduml

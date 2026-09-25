@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="OVO logo">
+  <rect width="120" height="120" rx="24" fill="#fff"/>
+  <rect x="16" y="16" width="88" height="88" rx="22" fill="#5A2EE6"/>
+  <path d="M34 80c10-22 19-34 29-34 9 0 18 8 18 19 0 10-6 18-17 21-9 2-20 1-30-6zm16-11c4 2 8 2 12 0 6-3 10-9 10-15 0-5-4-9-8-9-7 0-17 8-20 20 3 2 4 3 6 4z" fill="#fff"/>
+  <circle cx="82" cy="39" r="6" fill="#C9B7FF"/>
+</svg>

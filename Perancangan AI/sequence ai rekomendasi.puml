@@ -1,0 +1,43 @@
+@startuml
+
+actor Customer
+
+participant Flutter
+
+participant "Laravel API" as API
+
+database MySQL
+
+participant "Recommendation Service" as RS
+
+participant AI
+
+Customer -> Flutter : Open Recommendation
+
+Flutter -> API : GET Recommendation
+
+API -> MySQL : Load Purchase History
+
+MySQL --> API
+
+API -> MySQL : Load Favorite Genre
+
+MySQL --> API
+
+API -> MySQL : Search Available Concert
+
+MySQL --> API
+
+API -> RS : Generate Recommendation
+
+RS -> AI : Explain Recommendation
+
+AI --> RS
+
+RS --> API
+
+API --> Flutter
+
+Flutter --> Customer
+
+@enduml

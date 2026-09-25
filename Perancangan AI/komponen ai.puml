@@ -1,0 +1,37 @@
+@startuml
+
+package "Flutter / React" {
+[AI Chat Screen]
+}
+
+package "Laravel Backend" {
+
+[AI Controller]
+
+[AI Service]
+
+[Prompt Builder]
+
+[Recommendation Engine]
+
+}
+
+database "MySQL"
+
+cloud "OpenAI / Gemini"
+
+[AI Chat Screen] --> [AI Controller]
+
+[AI Controller] --> [AI Service]
+
+[AI Service] --> [Prompt Builder]
+
+[AI Service] --> [Recommendation Engine]
+
+[Recommendation Engine] --> MySQL
+
+[Prompt Builder] --> MySQL
+
+[AI Service] --> "OpenAI / Gemini"
+
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+
+node "Customer Device"{
+
+artifact "Web Browser"
+
+artifact "Android"
+
+artifact "iOS"
+
+}
+
+cloud Internet
+
+node "Cloud Server"{
+
+node "Nginx"
+
+node "Laravel API"
+
+node "Queue"
+
+node "Notification Service"
+
+database "MySQL"
+
+}
+
+node "Payment Gateway"
+
+node "Firebase"
+
+node "Storage"
+
+node "QR Service"
+
+"Web Browser" --> Internet
+"Android" --> Internet
+"iOS" --> Internet
+
+Internet --> "Laravel API"
+
+"Laravel API" --> "MySQL"
+
+"Laravel API" --> "Payment Gateway"
+
+"Laravel API" --> Firebase
+
+"Laravel API" --> Storage
+
+"Laravel API" --> "QR Service"
+
+@enduml

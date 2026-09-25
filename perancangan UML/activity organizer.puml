@@ -1,0 +1,60 @@
+@startuml
+title Activity Diagram - Organizer AI Analysis
+
+start
+
+:Organizer membuka AI Assistant;
+
+:Memilih Event;
+
+:Memilih jenis analisis;
+
+if (Jenis analisis?) then (Penjualan)
+
+    :Request Sales Analysis;
+
+    :Laravel memvalidasi akses Organizer;
+
+    :Mengambil data Event;
+
+    :Mengambil data Ticket;
+
+    :Mengambil data Order;
+
+    :Mengambil data Payment;
+
+elseif (Tren Customer)
+
+    :Request Customer Trend Analysis;
+
+    :Laravel memvalidasi akses Organizer;
+
+    :Mengambil data Customer;
+
+    :Mengambil data Order;
+
+    :Mengambil data Ticket;
+
+else (Laporan Event)
+
+    :Request Event Report;
+
+    :Laravel memvalidasi akses Organizer;
+
+    :Mengambil seluruh data Event terkait;
+
+endif
+
+:Data dikirim ke AI Service;
+
+:AI menganalisis data;
+
+:AI menghasilkan insight;
+
+:Laravel menerima hasil AI;
+
+:Menampilkan hasil analisis kepada Organizer;
+
+stop
+
+@enduml

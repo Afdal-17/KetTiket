@@ -1,0 +1,131 @@
+@startuml
+
+entity users {
+* id : bigint
+--
+name : varchar
+email : varchar
+password : varchar
+role : enum
+status : boolean
+}
+
+entity organizers {
+* id
+--
+user_id
+company_name
+phone
+verified
+}
+
+entity events {
+* id
+--
+organizer_id
+venue_id
+title
+description
+start_date
+end_date
+status
+}
+
+entity venues {
+* id
+--
+name
+address
+capacity
+}
+
+entity seats {
+* id
+--
+venue_id
+section
+row
+seat_number
+status
+}
+
+entity ticket_types{
+* id
+--
+event_id
+name
+price
+quota
+}
+
+entity orders{
+* id
+--
+user_id
+event_id
+total
+status
+}
+
+entity order_details{
+* id
+--
+order_id
+ticket_type_id
+seat_id
+price
+}
+
+entity payments{
+* id
+--
+order_id
+gateway
+transaction_id
+status
+}
+
+entity tickets{
+* id
+--
+order_detail_id
+barcode
+qr_code
+status
+}
+
+entity scan_logs{
+* id
+--
+ticket_id
+scanner_id
+scan_time
+}
+
+users ||--o{ organizers
+
+organizers ||--o{ events
+
+venues ||--o{ events
+
+venues ||--o{ seats
+
+events ||--o{ ticket_types
+
+users ||--o{ orders
+
+events ||--o{ orders
+
+orders ||--o{ order_details
+
+ticket_types ||--o{ order_details
+
+seats ||--o{ order_details
+
+orders ||--|| payments
+
+order_details ||--|| tickets
+
+tickets ||--o{ scan_logs
+
+@enduml

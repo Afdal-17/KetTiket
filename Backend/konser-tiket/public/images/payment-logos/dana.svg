@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="DANA logo">
+  <rect width="120" height="120" rx="24" fill="#fff"/>
+  <rect x="16" y="16" width="88" height="88" rx="22" fill="#0D6EFD"/>
+  <path d="M45 79V41h10.5c6.3 0 11 4.2 11 10.4 0 6.7-4.5 11.1-11 11.1H52V79h-7zm7-19h3c3.8 0 6-2.5 6-5.8 0-3.5-2.3-5.8-6-5.8h-3v11.6zM68 79V41h7v38H68zm12 0V41h7v38h-7z" fill="#fff"/>
+</svg>

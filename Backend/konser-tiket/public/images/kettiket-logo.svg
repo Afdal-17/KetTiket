@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <linearGradient id="ticketGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Background Sound Waves / Concert Vibe -->
+  <g opacity="0.15" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M 120 200 Q 156 120 256 120 Q 356 120 392 200" />
+    <path d="M 90 230 Q 140 100 256 100 Q 372 100 422 230" />
+    <path d="M 60 260 Q 120 80 256 80 Q 392 80 452 260" />
+  </g>
+
+  <!-- Premium Ticket Graphic -->
+  <g filter="url(#shadow)">
+    <!-- Main Ticket Body -->
+    <rect x="86" y="156" width="340" height="200" rx="24" fill="url(#ticketGrad)" />
+    
+    <!-- Perforated Cutouts / Notches -->
+    <circle cx="86" cy="256" r="22" fill="#0f172a" />
+    <circle cx="426" cy="256" r="22" fill="#0f172a" />
+
+    <!-- Dashed Line Divider -->
+    <line x1="330" y1="180" x2="330" y2="332" stroke="#ffffff" stroke-dasharray="8 8" stroke-width="3" opacity="0.6" />
+
+    <!-- Concert Star / VIP Icon -->
+    <circle cx="150" cy="220" r="32" fill="rgba(255, 255, 255, 0.15)" />
+    <path d="M 150 198 L 157 213 L 174 215 L 161 227 L 165 244 L 150 235 L 135 244 L 139 227 L 126 215 L 143 213 Z" fill="url(#goldGrad)" />
+
+    <!-- Ticket Typography & Details -->
+    <text x="200" y="215" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="1">KETTIKET</text>
+    <text x="200" y="245" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#e2e8f0" letter-spacing="2">VIP PASS • LIVE CONCERT</text>
+
+    <!-- Barcode Simulation -->
+    <g transform="translate(200, 275)" fill="#ffffff">
+      <rect x="0" y="0" width="4" height="42" />
+      <rect x="8" y="0" width="8" height="42" />
+      <rect x="20" y="0" width="3" height="42" />
+      <rect x="27" y="0" width="6" height="42" />
+      <rect x="38" y="0" width="10" height="42" />
+      <rect x="52" y="0" width="3" height="42" />
+      <rect x="60" y="0" width="7" height="42" />
+      <rect x="71" y="0" width="4" height="42" />
+      <rect x="80" y="0" width="9" height="42" />
+      <rect x="94" y="0" width="3" height="42" />
+    </g>
+
+    <!-- Stub Section Accent -->
+    <text x="365" y="245" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="url(#goldGrad)" text-anchor="middle" transform="rotate(90, 365, 245)">ADMIT ONE</text>
+  </g>
+</svg>

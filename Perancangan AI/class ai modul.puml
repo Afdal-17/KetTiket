@@ -1,0 +1,63 @@
+@startuml
+
+class AIController {
+
++chat()
+
++recommendation()
+
++history()
+
+}
+
+class AIService {
+
++sendPrompt()
+
++buildPrompt()
+
++getResponse()
+
+}
+
+class PromptBuilder {
+
++buildConcertPrompt()
+
++buildFAQPrompt()
+
++buildRecommendationPrompt()
+
+}
+
+class RecommendationService {
+
++getRecommendation()
+
+}
+
+class ConversationService {
+
++save()
+
++history()
+
+}
+
+class OpenAIProvider {
+
++chat()
+
+}
+
+AIController --> AIService
+
+AIService --> PromptBuilder
+
+AIService --> RecommendationService
+
+AIService --> ConversationService
+
+AIService --> OpenAIProvider
+
+@enduml

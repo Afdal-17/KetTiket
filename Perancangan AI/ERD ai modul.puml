@@ -1,0 +1,84 @@
+@startuml
+title ERD - AI Assistant & Intelligence Module
+
+entity users {
+    * id : BIGINT <<PK>>
+    --
+    name : VARCHAR
+    email : VARCHAR
+    role : VARCHAR
+}
+
+entity ai_conversations {
+    * id : BIGINT <<PK>>
+    --
+    user_id : BIGINT <<FK>>
+    title : VARCHAR
+    context_type : VARCHAR
+    created_at : DATETIME
+}
+
+entity ai_messages {
+    * id : BIGINT <<PK>>
+    --
+    conversation_id : BIGINT <<FK>>
+    role : VARCHAR
+    message : TEXT
+    created_at : DATETIME
+}
+
+entity ai_feedback {
+    * id : BIGINT <<PK>>
+    --
+    message_id : BIGINT <<FK>>
+    rating : INT
+    comment : TEXT
+}
+
+entity ai_logs {
+    * id : BIGINT <<PK>>
+    --
+    user_id : BIGINT <<FK>>
+    model : VARCHAR
+    prompt_tokens : INT
+    completion_tokens : INT
+    request_type : VARCHAR
+    created_at : DATETIME
+}
+
+entity events {
+    * id : BIGINT <<FK>>
+    --
+    (Refer to Core ERD)
+}
+
+entity orders {
+    * id : BIGINT <<FK>>
+    --
+    (Refer to Core ERD)
+}
+
+entity tickets {
+    * id : BIGINT <<FK>>
+    --
+    (Refer to Core ERD)
+}
+
+entity payments {
+    * id : BIGINT <<FK>>
+    --
+    (Refer to Core ERD)
+}
+
+users ||--o{ ai_conversations
+ai_conversations ||--o{ ai_messages
+ai_messages ||--o{ ai_feedback
+users ||--o{ ai_logs
+
+users ||--o{ events
+events ||--o{ orders
+users ||--o{ orders
+orders ||--o{ tickets
+orders ||--o{ payments
+
+@enduml

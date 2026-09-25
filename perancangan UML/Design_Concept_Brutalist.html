@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KetTiket - Brutalist Editorial UI Concept</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #F4F1EA;
+      --paper: #EFECE6;
+      --ink: #111111;
+      --accent-yellow: #CCFF00;
+      --accent-orange: #FF4D00;
+      --accent-blue: #0047FF;
+      --border: #111111;
+    }
+    body {
+      font-family: 'Space Mono', monospace;
+      background-color: var(--bg);
+      color: var(--ink);
+    }
+    .font-syne {
+      font-family: 'Syne', sans-serif;
+    }
+    .font-chakra {
+      font-family: 'Chakra Petch', sans-serif;
+    }
+    .neo-box {
+      background: #FFFFFF;
+      border: 3px solid var(--border);
+      box-shadow: 5px 5px 0px var(--border);
+    }
+    .neo-box-yellow {
+      background: var(--accent-yellow);
+      border: 3px solid var(--border);
+      box-shadow: 5px 5px 0px var(--border);
+    }
+    .neo-box-orange {
+      background: var(--accent-orange);
+      color: #FFFFFF;
+      border: 3px solid var(--border);
+      box-shadow: 5px 5px 0px var(--border);
+    }
+    .neo-box-blue {
+      background: var(--accent-blue);
+      color: #FFFFFF;
+      border: 3px solid var(--border);
+      box-shadow: 5px 5px 0px var(--border);
+    }
+    .neo-btn {
+      transition: all 0.1s ease;
+    }
+    .neo-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px var(--border);
+    }
+    .neo-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border);
+    }
+    .ticker-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--ink);
+      color: var(--accent-yellow);
+      border-top: 3px solid var(--border);
+      border-bottom: 3px solid var(--border);
+    }
+    .ticker {
+      display: inline-block;
+      animation: ticker 25s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-20">
+
+  <!-- Running Marquee Banner -->
+  <div class="ticker-wrap py-2.5 font-chakra text-sm font-bold tracking-wider uppercase">
+    <div class="ticker">
+      <span>★ KETTIKET CONCERT SAAS ★ NO SLOP ★ NO GENERIC GRADIENTS ★ DIRECT ACCESS TICKETING ★ LIVE WAR TICKET SYSTEM ★ NO HIDDEN FEES ★ REAL-TIME SEAT LOCK ★ </span>
+      <span>★ KETTIKET CONCERT SAAS ★ NO SLOP ★ NO GENERIC GRADIENTS ★ DIRECT ACCESS TICKETING ★ LIVE WAR TICKET SYSTEM ★ NO HIDDEN FEES ★ REAL-TIME SEAT LOCK ★ </span>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+
+    <!-- Header / Navbar -->
+    <header class="neo-box p-4 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-black text-white font-syne font-extrabold text-2xl flex items-center justify-center border-2 border-black">
+          K!
+        </div>
+        <div>
+          <span class="text-2xl font-extrabold font-syne tracking-tight block leading-none">KETTIKET.</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-600">[BRUTALIST ARCHITECTURE CONCEPT]</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs font-bold uppercase">
+        <span class="bg-black text-white px-3 py-1.5 border-2 border-black">SYS_STATUS: ONLINE</span>
+        <span class="neo-box-yellow px-3 py-1.5 font-mono">STYLE: NEO-BRUTALISM</span>
+      </div>
+    </header>
+
+    <!-- Editorial Hero Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+      <div class="lg:col-span-8 neo-box-yellow p-8">
+        <span class="text-xs font-bold uppercase tracking-widest bg-black text-white px-2 py-1 inline-block mb-4">
+          ISSUE #01 — TICKET WAR PROTOCOL
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold font-syne uppercase leading-none mb-6">
+          RAW. DIRECT.<br>NO-BULLSHIT TICKETING.
+        </h1>
+        <p class="text-sm font-mono leading-relaxed mb-6 max-w-2xl border-l-4 border-black pl-4">
+          Konsep antarmuka berbasis <b>Neo-Brutalism & Industrial Editorial</b>. Menghilangkan efek 'AI Slop' (glow, kaca transparan, gradien ungu) dan menggantinya dengan visual kontras tinggi, tipografi ekspresif, hirarki fungsional, dan aksesibilitas tinggi.
+        </p>
+      </div>
+
+      <div class="lg:col-span-4 neo-box p-6 bg-white flex flex-col justify-between">
+        <div>
+          <div class="text-xs font-bold uppercase border-b-2 border-black pb-2 mb-4 flex justify-between">
+            <span>[ SYSTEM STATS ]</span>
+            <span>2026</span>
+          </div>
+          <ul class="text-xs space-y-3 font-mono">
+            <li class="flex justify-between border-b border-dashed border-slate-400 pb-1">
+              <span>DESIGN_TYPE:</span> <span class="font-bold">BRUTALIST</span>
+            </li>
+            <li class="flex justify-between border-b border-dashed border-slate-400 pb-1">
+              <span>CONTRAST_RATIO:</span> <span class="font-bold">21:1 (MAX WCAG)</span>
+            </li>
+            <li class="flex justify-between border-b border-dashed border-slate-400 pb-1">
+              <span>WAR_CAPACITY:</span> <span class="font-bold">50,000 REQ/SEC</span>
+            </li>
+            <li class="flex justify-between border-b border-dashed border-slate-400 pb-1">
+              <span>FEEL:</span> <span class="font-bold">MAGAZINE / POSTER</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 neo-box-orange p-3 text-center text-xs font-bold uppercase">
+          RAW INDUSTRIAL LAYOUT
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Customer Ticket Interface -->
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-8 bg-black text-white font-bold flex items-center justify-center font-mono">01</span>
+        <h2 class="text-2xl font-extrabold font-syne uppercase">CUSTOMER DISCOVERY & WAR TICKET</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Concert Poster Card -->
+        <div class="neo-box bg-white p-5 lg:col-span-1">
+          <div class="relative mb-4 border-2 border-black">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover grayscale contrast-125">
+            <div class="absolute top-2 left-2 neo-box-orange px-2 py-1 text-[10px] font-bold uppercase">
+              LIVE SELLING
+            </div>
+            <div class="absolute bottom-2 right-2 bg-black text-white font-mono text-[10px] px-2 py-1 font-bold">
+              GBK STADIUM
+            </div>
+          </div>
+
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">18 NOVEMBER 2026</div>
+          <h3 class="text-2xl font-extrabold font-syne uppercase leading-tight mb-2">COLDPLAY WORLD TOUR</h3>
+          <p class="text-xs font-mono text-slate-700 mb-4 border-t-2 border-black pt-2">
+            Penyelenggara: TEM Presents & PK Entertainment.
+          </p>
+
+          <div class="neo-box-yellow p-3 mb-4 text-center">
+            <div class="text-[10px] font-bold uppercase tracking-wider mb-1">HITUNG MUNDUR WAR TIKET</div>
+            <div class="font-syne font-extrabold text-2xl tracking-widest">00:14:32.08</div>
+          </div>
+
+          <button class="w-full neo-box-orange font-syne font-extrabold text-sm py-3 neo-btn uppercase tracking-wider flex items-center justify-center gap-2">
+            <i data-lucide="zap" class="w-4 h-4 fill-white"></i> MASUK WAR TIKET NOW
+          </button>
+        </div>
+
+        <!-- Ticket Category Selection table style -->
+        <div class="neo-box bg-white p-5 lg:col-span-2">
+          <div class="border-b-2 border-black pb-3 mb-4 flex justify-between items-center">
+            <h4 class="font-syne font-extrabold text-lg uppercase">PILIH KATEGORI TIKET (REALTIME)</h4>
+            <span class="text-xs font-mono font-bold bg-slate-200 border border-black px-2 py-0.5">STATUS: LOCK ACTIVE</span>
+          </div>
+
+          <!-- Table-like brutalist layout -->
+          <div class="space-y-3 font-mono text-xs">
+            <!-- Row 1 -->
+            <div class="neo-box p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-sm bg-black text-white px-2 py-0.5">VIP FLOOR</span>
+                  <span class="neo-box-orange px-1.5 py-0.5 text-[10px] font-bold">SISA 3 SEAT</span>
+                </div>
+                <div class="text-slate-600 text-[11px] mt-1">Free Soundcheck Pass + Official Merchandise Lanyard</div>
+              </div>
+              <div class="text-right sm:text-right w-full sm:w-auto">
+                <div class="font-syne font-extrabold text-lg text-black">RP 3.800.000</div>
+                <button class="w-full sm:w-auto neo-box-yellow px-4 py-1.5 font-bold neo-btn uppercase text-xs mt-1">SELECT</button>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="neo-box p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-sm bg-blue-600 text-white px-2 py-0.5">CAT 1A</span>
+                  <span class="bg-emerald-400 border border-black px-1.5 py-0.5 text-[10px] font-bold">AVAILABLE</span>
+                </div>
+                <div class="text-slate-600 text-[11px] mt-1">Numbered Seating Area Utama Tengah</div>
+              </div>
+              <div class="text-right sm:text-right w-full sm:w-auto">
+                <div class="font-syne font-extrabold text-lg text-black">RP 2.500.000</div>
+                <button class="w-full sm:w-auto neo-box px-4 py-1.5 font-bold neo-btn uppercase text-xs mt-1">SELECT</button>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="neo-box bg-slate-100 p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 opacity-60">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-sm bg-slate-400 text-black px-2 py-0.5 line-through">CAT 2</span>
+                  <span class="bg-red-500 text-white border border-black px-1.5 py-0.5 text-[10px] font-bold">SOLD OUT</span>
+                </div>
+                <div class="text-slate-600 text-[11px] mt-1">Festival Free Standing Area</div>
+              </div>
+              <div class="text-right sm:text-right w-full sm:w-auto">
+                <div class="font-syne font-extrabold text-lg text-slate-500">RP 1.500.000</div>
+                <button class="w-full sm:w-auto bg-slate-300 text-slate-600 border-2 border-black px-4 py-1.5 font-bold cursor-not-allowed text-xs mt-1" disabled>HABIS</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 border-2 border-dashed border-black bg-amber-100 text-xs font-mono font-bold flex items-center gap-2">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-orange-600"></i>
+            <span>SISTEM REDIS LOCK: Kursi yang Anda pilih akan dikunci selama 10:00 menit untuk pembayaran.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Brutalist E-Ticket Pass -->
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-8 bg-black text-white font-bold flex items-center justify-center font-mono">02</span>
+        <h2 class="text-2xl font-extrabold font-syne uppercase">DIGITAL PASS / E-TICKET LAYOUT</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+
+        <!-- Physical Ticket Style Design -->
+        <div class="md:col-span-8 neo-box bg-white p-0 overflow-hidden relative">
+          <div class="bg-black text-white p-4 flex justify-between items-center border-b-2 border-black">
+            <span class="font-syne font-extrabold text-lg tracking-wider">KETTIKET // PASS ADMISSION</span>
+            <span class="neo-box-yellow text-black text-xs font-bold px-2 py-0.5">VALID TICKET</span>
+          </div>
+
+          <div class="p-6 grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono">
+            <div class="sm:col-span-2 space-y-3">
+              <h3 class="text-2xl font-syne font-extrabold uppercase leading-none">COLDPLAY: MUSIC OF THE SPHERES</h3>
+              <div class="grid grid-cols-2 gap-2 text-xs border-y-2 border-black py-2">
+                <div>
+                  <span class="text-slate-500 text-[10px] block">DATE</span>
+                  <span class="font-bold">18 NOV 2026</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 text-[10px] block">GATE OPEN</span>
+                  <span class="font-bold">17:00 WIB</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 text-[10px] block">SECTION</span>
+                  <span class="font-bold bg-black text-white px-1">VIP FLOOR</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 text-[10px] block">SEAT</span>
+                  <span class="font-bold bg-yellow-300 border border-black px-1">ROW A - 05</span>
+                </div>
+              </div>
+              <div class="text-[11px]">
+                <span class="text-slate-500">NAME:</span> <span class="font-bold">BUDI SANTOSO</span><br>
+                <span class="text-slate-500">TICKET_ID:</span> <span class="font-bold">TKT-88912-2026</span>
+              </div>
+            </div>
+
+            <!-- Ticket Stub (QR Area) -->
+            <div class="border-t-2 sm:border-t-0 sm:border-l-2 border-dashed border-black pt-4 sm:pt-0 sm:pl-6 flex flex-col justify-between items-center text-center">
+              <span class="text-[10px] font-bold uppercase">SCAN AT GATE</span>
+              <div class="w-28 h-28 border-2 border-black p-1 bg-white my-2 flex items-center justify-center">
+                <i data-lucide="qr-code" class="w-24 h-24 text-black"></i>
+              </div>
+              <span class="text-[9px] font-bold bg-slate-200 border border-black px-1">DYNAMIC QR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-4 font-mono text-xs">
+          <div class="neo-box-yellow p-4">
+            <h4 class="font-bold uppercase text-sm mb-1">MEMILIKI KARAKTERISTIK UNIK</h4>
+            <p>Layout bergaya tiket fisik tahun 90-an dengan tipografi monospaced kontras tinggi. Mudah dibaca dalam kondisi pencahayaan rendah di venue konser.</p>
+          </div>
+          <div class="neo-box bg-white p-4">
+            <h4 class="font-bold uppercase text-sm mb-1">AKSESIBILITAS WCAG AAA</h4>
+            <p>Kontras rasio maksimal (21:1), bebas ketergantungan pada persepsi warna semata, serta ramah screen-reader.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="neo-box bg-black text-white p-6 font-mono text-xs flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="font-syne font-extrabold text-base block">KETTIKET SAAS ENGINE</span>
+        <span>BRUTALIST & EDITORIAL DESIGN ARCHITECTURE — NO AI SLOP.</span>
+      </div>
+      <div class="text-right">
+        <span>AUGUST 2026 EDITION</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

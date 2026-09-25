@@ -1,0 +1,41 @@
+@startuml
+
+actor Customer
+
+participant Flutter
+
+participant "Laravel API" as API
+
+database MySQL
+
+participant "AI Service" as AIS
+
+participant "OpenAI / Gemini" as AI
+
+Customer -> Flutter : Ask Question
+
+Flutter -> API : POST /api/ai/chat
+
+API -> MySQL : Get User Data
+
+MySQL --> API
+
+API -> MySQL : Get Event Data
+
+MySQL --> API
+
+API -> AIS : Build Prompt
+
+AIS -> AI : Send Prompt
+
+AI --> AIS : AI Response
+
+AIS --> API : Final Response
+
+API -> MySQL : Save Conversation
+
+API --> Flutter : AI Answer
+
+Flutter --> Customer : Display Answer
+
+@enduml
